@@ -6,7 +6,7 @@ const Lights: React.FC = () => {
       <ambientLight color="#ffffff" intensity={2} />
       <directionalLight
         color="#ffffff"
-        intensity={1}
+        intensity={2}
         position={[5, 15, 10]}
         castShadow
         shadow-mapSize-width={1024}

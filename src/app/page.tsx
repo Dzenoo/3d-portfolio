@@ -9,8 +9,8 @@ import { Canvas } from "@react-three/fiber";
 export default function Home() {
   return (
     <Canvas
-      flat
       shadows
+      flat
       camera={{ far: 1000, near: 0.1, fov: 55, position: [7, 5, -17] }}
     >
       <Environment preset="apartment" />

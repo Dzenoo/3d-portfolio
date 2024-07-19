@@ -1,15 +1,23 @@
 import { useGLTF } from "@react-three/drei";
-import React from "react";
+import React, { useEffect } from "react";
+import { Mesh } from "three";
 
 const Plane: React.FC = () => {
   const { scene } = useGLTF("./models/plane.glb");
 
-  scene.traverse((object: any) => {
-    if (object.isMesh) {
-      object.receiveShadow = true;
-      object.castShadow = true;
-    }
-  });
+  useEffect(() => {
+    scene.traverse((object) => {
+      if ((object as Mesh).isMesh) {
+        const mesh = object as Mesh;
+
+        if (mesh.name === "plane001") {
+          mesh.receiveShadow = true;
+        } else if (mesh.name.includes("tree")) {
+          mesh.castShadow = true;
+        }
+      }
+    });
+  }, [scene]);
 
   return <primitive object={scene} />;
 };
