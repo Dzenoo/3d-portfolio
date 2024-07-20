@@ -1,6 +1,6 @@
 import { useClick } from "@/hooks/useClick";
 import { useGLTF } from "@react-three/drei";
-import React from "react";
+import React, { useMemo } from "react";
 
 const clickableItems = [
   { name: "text", url: "https://mysticmesh-ai.com/" },
@@ -16,7 +16,7 @@ const Projects: React.FC = () => {
 
   useClick(clickableItems);
 
-  return <primitive object={scene} />;
+  return useMemo(() => <primitive object={scene} />, [scene]);
 };
 
 export default Projects;

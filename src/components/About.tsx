@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { useGLTF } from "@react-three/drei";
 import { useClick } from "@/hooks/useClick";
 
@@ -15,7 +15,7 @@ const About: React.FC = () => {
 
   useClick(clickableItems);
 
-  return <primitive object={scene} />;
+  return useMemo(() => <primitive object={scene} />, [scene]);
 };
 
 export default About;

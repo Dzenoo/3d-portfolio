@@ -1,10 +1,10 @@
 import { useGLTF } from "@react-three/drei";
-import React from "react";
+import React, { useMemo } from "react";
 
 const Billiard: React.FC = () => {
   const { scene } = useGLTF("./models/billiard.glb");
 
-  return <primitive object={scene} />;
+  return useMemo(() => <primitive object={scene} />, [scene]);
 };
 
 export default Billiard;

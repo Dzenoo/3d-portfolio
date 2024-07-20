@@ -1,5 +1,5 @@
 import { useGLTF } from "@react-three/drei";
-import React, { useEffect } from "react";
+import React, { useEffect, useMemo } from "react";
 import { Mesh } from "three";
 
 const Plane: React.FC = () => {
@@ -17,7 +17,7 @@ const Plane: React.FC = () => {
     });
   }, [scene]);
 
-  return <primitive object={scene} />;
+  return useMemo(() => <primitive object={scene} />, [scene]);
 };
 
 export default Plane;

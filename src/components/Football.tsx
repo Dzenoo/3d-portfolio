@@ -1,10 +1,10 @@
 import { useGLTF } from "@react-three/drei";
-import React from "react";
+import React, { useMemo } from "react";
 
 const Football: React.FC = () => {
   const { scene } = useGLTF("./models/football.glb");
 
-  return <primitive object={scene} />;
+  return useMemo(() => <primitive object={scene} />, [scene]);
 };
 
 export default Football;

@@ -4,13 +4,14 @@ import About from "@/components/About";
 import Billiard from "@/components/Billiard";
 import Calisthenics from "@/components/Calisthenics";
 import Football from "@/components/Football";
-import Lights from "@/components/Lights";
+import Lights from "@/components/setup/Lights";
 import Name from "@/components/Name";
 import Plane from "@/components/Plane";
 import Projects from "@/components/Projects";
 import Skills from "@/components/Skills";
 import { Environment, MapControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
+import React from "react";
 import * as THREE from "three";
 
 export default function Home() {
@@ -18,7 +19,7 @@ export default function Home() {
     <Canvas
       shadows
       flat
-      camera={{ far: 1000, near: 0.1, fov: 55, position: [7, 5, -17] }}
+      camera={{ far: 500, near: 0.1, fov: 55, position: [7, 5, -17] }}
     >
       <fog attach="fog" args={["#4a5fff", 10, 70]} />
 
@@ -27,14 +28,16 @@ export default function Home() {
       <Environment preset="apartment" />
       <Lights />
 
-      <Plane />
-      <Name />
-      <Calisthenics />
-      <Billiard />
-      <Football />
-      <Skills />
-      <About />
-      <Projects />
+      <React.Suspense fallback={null}>
+        <Plane />
+        <Name />
+        <Calisthenics />
+        <Billiard />
+        <Football />
+        <Skills />
+        <About />
+        <Projects />
+      </React.Suspense>
 
       <MapControls
         target={[2, 0, -25]}
