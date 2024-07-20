@@ -2,6 +2,7 @@
 
 import Billiard from "@/components/Billiard";
 import Calisthenics from "@/components/Calisthenics";
+import Football from "@/components/Football";
 import Lights from "@/components/Lights";
 import Name from "@/components/Name";
 import Plane from "@/components/Plane";
@@ -26,7 +27,7 @@ export default function Home() {
       <Plane />
       <Name />
       <Calisthenics />
-      <Billiard />
+      <Football />
 
       <MapControls
         target={[2, 0, -25]}

@@ -12,8 +12,6 @@ const Plane: React.FC = () => {
 
         if (mesh.name === "plane001") {
           mesh.receiveShadow = true;
-        } else if (mesh.name.includes("tree")) {
-          mesh.castShadow = true;
         }
       }
     });
