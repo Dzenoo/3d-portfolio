@@ -6,6 +6,7 @@ import Football from "@/components/Football";
 import Lights from "@/components/Lights";
 import Name from "@/components/Name";
 import Plane from "@/components/Plane";
+import Skills from "@/components/Skills";
 import { Environment, MapControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import * as THREE from "three";
@@ -27,7 +28,9 @@ export default function Home() {
       <Plane />
       <Name />
       <Calisthenics />
+      <Billiard />
       <Football />
+      <Skills />
 
       <MapControls
         target={[2, 0, -25]}
