@@ -1,5 +1,6 @@
 "use client";
 
+import About from "@/components/About";
 import Billiard from "@/components/Billiard";
 import Calisthenics from "@/components/Calisthenics";
 import Football from "@/components/Football";
@@ -31,6 +32,7 @@ export default function Home() {
       <Billiard />
       <Football />
       <Skills />
+      <About />
 
       <MapControls
         target={[2, 0, -25]}
