@@ -6,7 +6,16 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Dzenis Gudzevic",
-  description: "Amazing 3d developer portfolio",
+  description:
+    "I have 4 years of experience as a Software Developer, specializing in a wide range of technologies.",
+  icons: {
+    icon: [
+      {
+        url: "/logo.png",
+        href: "/logo.png",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
